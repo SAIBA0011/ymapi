@@ -3,19 +3,19 @@
 return [
 
     // Your Yourmembership Public API Key
-    'pubkey' => '************************',
+    'pubkey' => '*************************',
 
     // Your Yourmembership Private API Key
-    'prikey' => '************************',
+    'prikey' => '*************************',
 
     // Your Yourmembership SA Pass Code
-    'sapass' => '************************',
+    'sapass' => '*************************',
 
     // Your Default Yourmembership username
-    'username' => '************************',
+    'username' => '*************************',
 
     // Your Default Yourmembership password
-    'password' => '************************',
+    'password' => '*************************',
 
     // Current API Version
     'version' => '2.00'

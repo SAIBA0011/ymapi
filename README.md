@@ -10,7 +10,7 @@
 Install via Composer:
 ```php
     "require": {
-            "saiba/ymapi": "dev-master"
+            "saiba/ymapi": "1.0.1"
         },
 ```
 Run Composer Update

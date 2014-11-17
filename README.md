@@ -67,20 +67,20 @@ use Saiba\Ymapi\People\Person;
 
 Route::get('/', function()
 {
-    $terms = [
-        'SearchText' => 'John'
+    $params = [
+        'SearchText' => 'Gerhard'
     ];
 
-    $person = (new Person())->search($terms);
-
+    $person = ( new Person())->search($params);
     $check = ( new Check())->result($person);
 
-    while (! $check ) {
-        $person = (new Person())->search($terms);
+    while( !$check ) {
+        $person = ( new Person())->search($params);
     }
 
-    dd($person);
-
+    foreach ( $person->{'People.All.Search'}->Results->Item as $item ) {
+        var_dump($item);
+    }
 });
 ```
 

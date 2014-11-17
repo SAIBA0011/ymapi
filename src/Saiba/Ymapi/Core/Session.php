@@ -25,5 +25,6 @@ class Session {
         if ( ! isset($_COOKIE["YMSessionid"]) ) {
             $this->create();
         }
+        return true;
     }
 }

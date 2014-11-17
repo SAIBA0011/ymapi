@@ -6,10 +6,19 @@
 * Composer
 * PHP 5.4 or above
 
+
+Install via Composer:
 ```php
     "require": {
-            "php": ">=5.4.0",
-            "illuminate/support": "4.2.*",
-            "maniaplanet/manialib-xml": "0.1.1"
+            "saiba/ymapi": "dev-master"
         },
 ```
+
+Add YmapiServiceProvider to config/app.php:
+```php
+	'providers' => array(
+            'Saiba\Ymapi\YmapiServiceProvider'
+            );
+```
+
+Done

@@ -1,9 +1,11 @@
 <?php namespace Saiba\Ymapi\Events;
 
+use Saiba\Ymapi\Core\BaseModel;
 use Saiba\Ymapi\Core\XmlRenderer;
 use Saiba\Ymapi\Core\Request;
 
-class Event {
+class Event extends BaseModel {
+
     public function getIds($callOptions = [])
     {
         $renderer = new XmlRenderer();

@@ -19,7 +19,7 @@ class XmlRenderer {
         $this->version = Config::get('ymapi::version');
     }
 
-    public function render($call, $callOptions = [])
+    public function render($call, $sessionID = false, $callOptions = [])
     {
         $root = Node::create()
             ->setNodeName('YourMembership');
@@ -35,12 +35,15 @@ class XmlRenderer {
             ->setNodeName('CallID')
             ->setNodeValue($this->randomCallID())
             ->appendTo($root);
-        if( isset($_COOKIE['YMSessionid'])){
-            Node::create()
-                ->setNodeName('SessionID')
-                ->setNodeValue($_COOKIE['YMSessionid'])
-                ->appendTo($root);
-        }
+
+            if( $sessionID )
+            {
+                Node::create()
+                    ->setNodeName('SessionID')
+                    ->setNodeValue($sessionID)
+                    ->appendTo($root);
+            }
+
         Node::create()
             ->setNodeName('SaPasscode')
             ->setNodeValue($this->sapass)

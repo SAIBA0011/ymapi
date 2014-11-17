@@ -1,5 +1,8 @@
 <?php namespace Saiba\Ymapi\Core;
 
+use Config;
+use Exception;
+
 class Session {
 
     protected $sessionID;
@@ -11,20 +14,20 @@ class Session {
         $request = new Request($xml);
         $result = $request->call();
         $this->sessionID = $result->{'Session.Create'}->SessionID;
-        $this->setSession();
-        return true;
-    }
 
-    public function setSession()
-    {
-        setcookie("YMSessionid", $this->sessionID, time() + (60 * 19));
-    }
+        $callOptions = [
+            'Username' => 'gerhardt0011',
+            'Password' => 'Liefie01'
+        ];
 
-    public function checkSession()
-    {
-        if ( ! isset($_COOKIE["YMSessionid"]) ) {
-            $this->create();
+        $renderer = new XmlRenderer();
+        $xml = $renderer->render('Sa.Auth.Authenticate', $result->{'Session.Create'}->SessionID, $callOptions);
+        $request = new Request($xml);
+        $authed = $request->call();
+
+        if (isset($authed->{'Sa.Auth.Authenticate'}->ID)) {
+            return $this->sessionID;
         }
-        return true;
+        throw new Exception('Authentication Failed!');
     }
 }

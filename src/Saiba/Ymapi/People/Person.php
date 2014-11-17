@@ -19,7 +19,7 @@ class Person extends BaseModel {
     public function create($callOptions = [])
     {
         $renderer = new XmlRenderer();
-        $xml = $renderer->render('Sa.Members.Profile.Create', $callOptions);
+        $xml = $renderer->render('Sa.Members.Profile.Create', $this->sessionId, $callOptions);
         $request = new Request($xml);
         $result = $request->call();
         return $result;

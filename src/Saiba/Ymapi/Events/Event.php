@@ -9,7 +9,7 @@ class Event extends BaseModel {
     public function getIds($callOptions = [])
     {
         $renderer = new XmlRenderer();
-        $xml = $renderer->render('Sa.Events.All.GetIDs', $callOptions);
+        $xml = $renderer->render('Sa.Events.All.GetIDs', $this->sessionId, $callOptions);
         $request = new Request($xml);
         $result = $request->call();
         return $result;

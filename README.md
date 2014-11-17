@@ -9,9 +9,9 @@
 
 Install via Composer:
 ```php
-    "require": {
-            "saiba/ymapi": "1.0.1"
-        },
+"require": {
+    "saiba/ymapi": "1.0.1"
+},
 ```
 Run Composer Update
 ```php
@@ -20,9 +20,9 @@ composer update
 
 Add YmapiServiceProvider to config/app.php:
 ```php
-	'providers' => array(
-            'Saiba\Ymapi\YmapiServiceProvider'
-            );
+'providers' => array(
+    'Saiba\Ymapi\YmapiServiceProvider'
+);
 ```
 
 Publish the config files:

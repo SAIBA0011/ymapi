@@ -1,0 +1,21 @@
+{
+    "name": "saiba/ymapi",
+    "description": "",
+    "authors": [
+        {
+            "name": "Gerhard Theunissen",
+            "email": "webit@saiba.org.za"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "maniaplanet/manialib-xml": "0.1.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Saiba\\Ymapi": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

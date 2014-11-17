@@ -14,7 +14,9 @@ Install via Composer:
         },
 ```
 Run Composer Update
-
+```php
+composer update
+```
 
 Add YmapiServiceProvider to config/app.php:
 ```php
@@ -22,6 +24,12 @@ Add YmapiServiceProvider to config/app.php:
             'Saiba\Ymapi\YmapiServiceProvider'
             );
 ```
+
+Publish the config files:
+```php
+php artisan config:publish saiba/ymapi
+```
+
 
 ## Usage
 

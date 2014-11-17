@@ -40,18 +40,14 @@ To get a list of all your event ids:
 ```php
 <?php
 
-use Saiba\Ymapi\People\Person;
+use Saiba\Ymapi\Events\Event;
 
 Route::get('/', function()
 {
-    $params = [
-        'SearchText' => 'Gerhard'
-    ];
+    $event = new Event();
+    $events = $event->getIds();
 
-    $person = new Person();
-    $result = $person->search($params);
-
-    dd($result);
+    dd($events);
 });
 ```
 

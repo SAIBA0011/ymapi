@@ -101,4 +101,6 @@ Route::get('/', function()
 
 });
 ```
-**Please note when creating a new member you must follow the API Precisely all capitalization should be as per the API Documentation referenced above**
+*Please note when creating a new member you must follow the API Precisely all capitalization should be as per the API Documentation referenced above*
+
+**More features coming soon, this package is still under heavy development**

@@ -19,4 +19,11 @@ class Session {
     {
         setcookie("YMSessionid", $this->sessionID, time() + (60 * 19));
     }
+
+    public function checkSession()
+    {
+        if ( ! isset($_COOKIE["YMSessionid"]) ) {
+            $this->create();
+        }
+    }
 }

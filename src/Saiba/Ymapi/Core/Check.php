@@ -21,11 +21,11 @@ class Check {
                 die('[SaPassCode] is invalid');
                 break;
             case 201:
-                ( new Session() )->create();
+                ( new Session() )->checkSession();
                 return false;
                 break;
             case 202:
-                ( new Session() )->create();
+                ( new Session() )->checkSession();
                 return false;
                 break;
             case 301:
@@ -38,7 +38,7 @@ class Check {
                 die('Invalid method call');
                 break;
             case 402:
-                ( new Session() )->create();
+                ( new Session() )->checkSession();
                 return false;
                 break;
             case 403:

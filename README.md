@@ -81,10 +81,14 @@ use Saiba\Ymapi\People\Person;
 Route::get('/', function()
 {
     $params = [
-        'EmailAddr' => 'demo@yourmembership.com',
-        'FirstName' => 'Elizabeth',
-        'LastName' => 'Allen',
-        'Password' => 'password'
+        'EmailAddr' => 'john@example.com',
+        'FirstName' => 'John',
+        'LastName' => 'Doe',
+        'Membership' => 'SAIBA Member & Business Accountant in Practice',
+        'MembershipExpiry' => '2060-10-05 00:00:00',
+        'MemberTypeCode' => '2014SAIBAMEM',
+        'Username' => 'Johnd',
+        'Password' => 'ThisismyPassword'
     ];
 
     $person = (new Person())->create($params);

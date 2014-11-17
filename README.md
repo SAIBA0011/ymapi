@@ -45,14 +45,16 @@ use Saiba\Ymapi\Events\Event;
 
 Route::get('/', function()
 {
-	$events = ( new Event())->getIds();
+    $events = ( new Event())->getIds();
     $check = ( new Check())->result($events);
 
     while (! $check ) {
         $events = ( new Event())->getIds();
     }
 
-    dd($events);
+    foreach($events->{'Sa.Events.All.GetIDs'}->EventID as $eventId ) {
+        echo $eventId . '<br>';
+    }
 
 });
 ```

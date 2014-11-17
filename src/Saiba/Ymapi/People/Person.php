@@ -11,7 +11,7 @@ class Person {
         $xml = $renderer->render('People.All.Search', $callOptions);
         $request = new Request($xml);
         $result = $request->call();
-        return $result;
+        return $result->{'People.All.Search'}->Results;
     }
 
     public function create($callOptions = [])
@@ -22,4 +22,4 @@ class Person {
         $result = $request->call();
         return $result;
     }
-} 
+}

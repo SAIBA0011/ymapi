@@ -13,6 +13,8 @@ Install via Composer:
             "saiba/ymapi": "dev-master"
         },
 ```
+Run Composer Update
+
 
 Add YmapiServiceProvider to config/app.php:
 ```php

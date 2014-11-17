@@ -1,6 +1,7 @@
 <?php namespace Saiba\Ymapi\Core;
 
 use Saiba\Ymapi\Auth\Auth;
+use Config;
 
 class Check {
 
@@ -41,7 +42,7 @@ class Check {
                 return false;
                 break;
             case 403:
-                $details = [ 'Username' => 'Gerhardt00112', 'Password' => 'Sparxz986532' ];
+                $details = [ 'Username' => Config::get('ymapi::username'), 'Password' => Config::get('ymapi::password') ];
                 ( new Auth() )->Authenticate($details);
                 return false;
                 break;

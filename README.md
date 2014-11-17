@@ -30,6 +30,8 @@ Publish the config files:
 php artisan config:publish saiba/ymapi
 ```
 
+**edit the config files under app/config/packages/saiba/ymapi/config/config.php**
+*Note the username and password, this is used as the default authentication username and password for various methods that require authentication but not an authenticated user*
 
 ## Usage
 

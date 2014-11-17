@@ -3,14 +3,14 @@
 return [
 
     // Your Yourmembership Public API Key
-    'pubkey' => '',
+    'pubkey' => 'Your Yourmembership Public API Key',
 
     // Your Yourmembership Private API Key
-    'prikey' => '',
+    'prikey' => 'Your Yourmembership Private API Key',
 
     // Your Yourmembership SA Pass Code
-    'sapass' => '',
+    'sapass' => 'Your Yourmembership SA Pass Code',
 
     // Your Yourmembership API Version ( stick to 2.00 )
-    'version' => ''
+    'version' => 'Your Yourmembership API Version ( stick to 2.00 )'
 ];

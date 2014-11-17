@@ -10,6 +10,6 @@ class Event {
         $xml = $renderer->render('Sa.Events.All.GetIDs', $callOptions);
         $request = new Request($xml);
         $result = $request->call();
-        return $result;
+        return $result->{'Sa.Events.All.GetIDs'};
     }
 } 

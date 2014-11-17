@@ -52,8 +52,8 @@ Route::get('/', function()
         $events = ( new Event())->getIds();
     }
 
-    foreach($events->{'Sa.Events.All.GetIDs'}->EventID as $eventId ) {
-        echo $eventId . '<br>';
+    foreach($events->EventID as $id ) {
+        echo $id . '<br>';
     }
 
 });

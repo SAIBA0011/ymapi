@@ -52,9 +52,7 @@ Route::get('/', function()
         $events = ( new Event())->getIds();
     }
 
-    foreach($events->EventID as $id ) {
-        echo $id . '<br>';
-    }
+   dd($events);
 
 });
 ```
@@ -81,25 +79,7 @@ Route::get('/', function()
         $person = (new Person())->search($terms);
     }
 
-    foreach ($person->Item as $result) {
-        var_dump($result);
-
-        /*
-         * Result:
-         *
-         * object(SimpleXMLElement)[123]
-         * public 'ProfileID' => string '24591642' (length=8)
-         * public 'PrimaryGroupName' =>
-         * object(SimpleXMLElement)[140]
-         * public 'IsMember' => string '1' (length=1)
-         * public 'IsNonMember' => string '0' (length=1)
-         * public 'Name' => string 'JOHN GWESHE' (length=11)
-         * public 'City' => string 'SANDTON' (length=7)
-         * public 'Location' => string 'Gauteng' (length=7)
-         *
-         * Access with echo $result->Name;
-         */
-    }
+    dd($person);
 
 });
 ```

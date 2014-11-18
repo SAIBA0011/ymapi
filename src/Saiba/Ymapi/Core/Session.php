@@ -15,10 +15,7 @@ class Session {
         $result = $request->call();
         $this->sessionID = $result->{'Session.Create'}->SessionID;
 
-        $callOptions = [
-            'Username' => Config::get('ymapi::username'),
-            'Password' => Config::get('ymapi::password')
-        ];
+        $callOptions = [ 'Username' => Config::get('ymapi::username'), 'Password' => Config::get('ymapi::password') ];
 
         $renderer = new XmlRenderer();
         $xml = $renderer->render('Sa.Auth.Authenticate', $result->{'Session.Create'}->SessionID, $callOptions);

@@ -16,8 +16,8 @@ class Session {
         $this->sessionID = $result->{'Session.Create'}->SessionID;
 
         $callOptions = [
-            'Username' => 'gerhardt0011',
-            'Password' => 'Liefie01'
+            'Username' => Config::get('ymapi::username'),
+            'Password' => Config::get('ymapi::password')
         ];
 
         $renderer = new XmlRenderer();

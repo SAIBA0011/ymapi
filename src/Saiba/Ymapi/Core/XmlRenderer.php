@@ -19,7 +19,7 @@ class XmlRenderer {
         $this->version = Config::get('ymapi::version');
     }
 
-    public function render($call, $sessionID = false, $callOptions = [])
+    public function render($call, $sessionID = false, $callOptions = [], $additionalFields = [])
     {
         $root = Node::create()
             ->setNodeName('YourMembership');
@@ -52,6 +52,33 @@ class XmlRenderer {
             ->setNodeName('Call')
             ->setAttribute('Method', $call)
             ->appendTo($root);
+        /**
+         * Adding Additional Fields
+         */
+        if ( ! empty($additionalFields)) {
+
+            $customResponses = Node::create()
+                ->setNodeName('CustomFieldResponses')
+                ->appendTo($call);
+
+            foreach($additionalFields as $key => $val)
+            {
+                $customFieldNode= Node::create()
+                    ->setNodeName('CustomFieldResponse')
+                    ->setAttribute('FieldCode', $key)
+                    ->appendTo($customResponses);
+
+                $values = Node::create()
+                    ->setNodeName('Values')
+                    ->appendTo($customFieldNode);
+
+                Node::create()
+                    ->setNodeName('Value')
+                    ->setNodeValue($val)
+                    ->appendTo($values);
+            }
+        }
+
         if ( ! empty($callOptions)) {
             foreach( $callOptions as $option => $val ) {
                 Node::create()
